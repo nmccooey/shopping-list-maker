@@ -1,0 +1,23 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-item-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
