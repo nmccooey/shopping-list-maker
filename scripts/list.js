@@ -10,7 +10,6 @@ let itemList = [];
 submitButton.addEventListener("click", function(){
     $('#add-item-modal').modal('hide');
 
-
     let newItem = {itemName:itemName.value, quantity:quantity.value};
 
     itemList.push(newItem);
@@ -32,8 +31,8 @@ function render(newItem) {
     const deleteButtonTD = document.createElement("td");
 
     // Set name and quantity.
-    itemNameTD.innerText = itemList[itemList.length -1].itemName;
-    quantityTD.innerText = itemList[itemList.length-1].quantity;
+    itemNameTD.innerText = itemList[itemList.length - 1].itemName;
+    quantityTD.innerText = itemList[itemList.length - 1].quantity;
 
     newRow.appendChild(itemNameTD);
     newRow.appendChild(quantityTD);
@@ -42,14 +41,13 @@ function render(newItem) {
     // Create delete button.
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X";
+    deleteButton.className = "btn btn-danger";
     deleteButtonTD.appendChild(deleteButton);
 
     deleteButton.addEventListener("click", function(){
         // get index and remove from list.
         let index = newRow.getAttribute("index");
         itemList.splice(index, 1);
-
-        // update table.
-        
+        $(this).closest("tr").remove();
     });
 }
